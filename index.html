@@ -1,441 +1,344 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Peak Pros SC — Add Roof Rejuvenation Revenue to Your Company</title>
-  <meta name="description" content="Join Peak Pros SC. Add Peak 301 roof rejuvenation to your services with white-label materials, training, and a contractor-first revenue-share model. Apply today." />
-  <meta name="keywords" content="Roof rejuvenation South Carolina, Peak 301 partners, Roofing revenue share program, White-label roof rejuvenation, Add Peak 301 to your business" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Peak Pros SC — Add Roof Rejuvenation Revenue to Your Company" />
-  <meta property="og:description" content="Join Peak Pros SC and add Peak 301 roof rejuvenation under your brand. Training, materials, and a contractor-first revenue-share model." />
+  <!-- BASIC META -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peak 301 Partner Program South Carolina | Add Roof Rejuvenation Revenue</title>
+  <meta name="description" content="Join Peak Pros SC and add Peak 301 roof rejuvenation to your roofing or home service business in South Carolina. White-label program, revenue share, no upfront cost." />
+
+  <!-- SEO / OG -->
+  <meta property="og:title" content="Peak 301 Partner Program South Carolina" />
+  <meta property="og:description" content="Roof rejuvenation South Carolina partners wanted. Add Peak 301 services with no upfront cost and keep most of the revenue." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://PeakProsSC.com" />
-  <meta property="og:image" content="https://PeakProsSC.com/assets/og-image.jpg" />
-  <meta name="theme-color" content="#101114"/>
+  <meta property="og:url" content="https://peakprosga.com" />
+  <meta property="og:image" content="/images/og-image.jpg" />
 
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- STYLES -->
   <style>
-    /* --- Brand palette & typography --- */
-    :root{
-      --red:#C8102E;
-      --black:#101114;
-      --white:#FFFFFF;
-      --muted:#f2f2f4;
-      --max-width:1100px;
-      --radius:12px;
-      --container-padding:16px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:var(--black);
+    :root {
+      --red: #C8102E;
+      --black: #101114;
+      --white: #ffffff;
+      --gray: #f2f2f2;
+      --dark-gray: #666;
     }
 
-    /* --- Mobile-first layout --- */
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--white);font-size:16px;line-height:1.45}
-    .wrap{max-width:var(--max-width);margin:0 auto;padding:18px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo img{height:36px}
-    .cta-row{display:flex;gap:8px}
-    .btn{background:var(--red);color:var(--white);border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
-    .btn.secondary{background:transparent;border:2px solid var(--black);color:var(--black)}
-    .hero{background:linear-gradient(180deg, #fff 0, var(--muted) 100%);padding:20px;border-radius:10px;margin-bottom:14px}
-    h1{font-size:20px;margin:6px 0 8px}
-    p.lead{margin:0 0 12px;color:#222;font-weight:600}
-    .two-col{display:grid;grid-template-columns:1fr;gap:14px}
-    .card{background:var(--white);border-radius:10px;padding:12px;box-shadow:0 6px 18px rgba(16,17,20,0.06);}
-
-    /* --- Info lists --- */
-    ul.benefits{padding-left:18px;margin:6px 0}
-    .metrics{display:flex;gap:8px;flex-wrap:wrap}
-    .metric{background:var(--muted);padding:8px;border-radius:8px;font-weight:700}
-
-    /* --- Gallery/slider --- */
-    .ba-slider{position:relative;overflow:hidden;border-radius:10px;height:220px;background:#ddd}
-    .ba-slider img{width:100%;height:100%;object-fit:cover;display:block;user-select:none}
-    .ba-overlay{position:absolute;left:0;top:0;height:100%;width:50%;overflow:hidden}
-    .ba-handle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;border:2px solid rgba(0,0,0,0.08)}
-    .ba-handle:after{content:"";display:block;width:14px;height:14px;border-left:2px solid var(--black);border-top:2px solid var(--black);transform:rotate(45deg)}
-
-    /* --- Reviews slider --- */
-    .reviews{overflow:hidden}
-    .reviews-inner{display:flex;gap:12px;transition:transform 0.6s ease}
-    .review{min-width:100%;box-shadow:0 6px 14px rgba(0,0,0,0.06);padding:14px;border-radius:10px;background:var(--white)}
-
-    /* --- Form --- */
-    form .row{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
-    input[type="text"],input[type="email"],input[type="tel"],select,textarea{padding:10px;border-radius:8px;border:1px solid #ddd;font-size:15px;width:100%}
-    label{font-size:13px;color:#333;font-weight:600}
-    .form-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-
-    /* --- Footer --- */
-    footer{margin-top:18px;padding:14px 0;border-top:1px solid #eee;display:flex;flex-direction:column;gap:8px}
-    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-
-    /* --- Sticky call button --- */
-    .call-sticky{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);z-index:9999}
-    .call-sticky a{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--black);color:var(--white);font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(16,17,20,0.3)}
-
-    /* --- Responsive: tablet+ --- */
-    @media(min-width:720px){
-      h1{font-size:28px}
-      .two-col{grid-template-columns:1fr 360px}
-      .ba-slider{height:320px}
-      .review{min-width:50%}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
     }
-    @media(min-width:1000px){
-      .wrap{padding:28px}
-      header{padding:14px 0}
-      .cta-row .btn{padding:12px 18px}
-      .two-col{grid-template-columns:1fr 420px}
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 6px;
+      font-weight: 700;
+      margin-right: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--red);
+      color: var(--red);
+      background: transparent;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(16,17,20,0.85), rgba(16,17,20,0.85)), url('/images/hero-bg.jpg') center/cover no-repeat;
+      color: var(--white);
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero p {
+      color: #ddd;
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1.1rem;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--gray);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    /* REVENUE */
+    .revenue-box {
+      background: var(--black);
+      color: var(--white);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .revenue-box p {
+      color: #ddd;
+    }
+
+    /* SLIDERS */
+    .slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .slider img {
+      width: 100%;
+      display: none;
+    }
+
+    .slider img.active {
+      display: block;
+    }
+
+    /* FORM */
+    form input, form select {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      width: 100%;
+      border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+
+    /* CALL NOW MOBILE */
+    .call-now {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 15px;
+      font-weight: 800;
+      z-index: 1000;
+    }
+
+    @media(max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .call-now { display: block; }
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">
-        <!-- Placeholders for logos: replace with real assets -->
-        <img src="assets/peak-pros-logo-black.png" alt="Peak Pros logo (black)" />
-        <img src="assets/peak301-logo.png" alt="Peak 301 logo" style="height:28px;opacity:.9"/>
-      </div>
-      <div class="cta-row">
-        <a class="btn secondary" href="#revenue-model">Get the Revenue Model</a>
-        <a class="btn" href="#apply">Become a Partner</a>
-      </div>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero card" aria-labelledby="hero-heading">
-      <h1 id="hero-heading">Add Roof Rejuvenation Revenue to Your Company — No Cost to You.</h1>
-      <p class="lead">Peak 301 Partner Program for South Carolina contractors. We supply Peak 301 materials and training — you spray under your brand and keep the majority of revenue.</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <a class="btn" href="#apply">Become a Partner</a>
-        <a class="btn secondary" href="#revenue-model">Get the Revenue Model</a>
-      </div>
-      <div style="margin-top:12px;font-size:14px;color:#444">
-        <strong>Quick facts:</strong>
-        <span class="metrics" style="margin-top:8px">
-          <span class="metric">White-label materials</span>
-          <span class="metric">Training & sales support</span>
-          <span class="metric">South Carolina territories</span>
-        </span>
-      </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <h1>Add Roof Rejuvenation Revenue to Your Company — No Cost to You.</h1>
+  <p>Peak 301 Partner Program for South Carolina Contractors. White-label roof rejuvenation that installs under your brand while you keep most of the profit.</p>
+  <a href="#apply" class="btn btn-primary">Become a Partner</a>
+  <a href="/docs/peak301-revenue-model.pdf" class="btn btn-outline">Get the Revenue Model</a>
+</section>
 
-    <!-- MAIN two-column: left content, right CTA/form -->
-    <div class="two-col">
-      <main>
-        <!-- What is Peak 301? -->
-        <section id="what-is" class="card" style="margin-bottom:12px">
-          <h2>What is Peak 301?</h2>
-          <p><strong>Peak 301</strong> is a soy-based roof rejuvenation treatment engineered to extend the life of asphalt shingles by stopping granular loss, restoring flexibility, and improving water resistance. It's applied quickly and safely by trained contractors — without replacing the roof.</p>
-          <ul class="benefits">
-            <li><strong>Extend roof life</strong> — adds years of service life when applied correctly.</li>
-            <li><strong>Stops granule loss</strong> — reduces weathering and premature failure.</li>
-            <li><strong>Restores flexibility</strong> — rejuvenates asphalt for better performance in heat and cold.</li>
-            <li><strong>Fast install</strong> — quick, serviceable jobs that add recurring revenue.</li>
-          </ul>
-
-          <p style="margin-top:8px;font-weight:700">Peak 301 vs roof replacement: lower cost, faster installation, minimal disruption — ideal for homeowners not yet ready for replacement.</p>
-
-          <p style="margin-top:12px;font-size:14px">Download the technical spec: <a href="assets/peak301-spec.pdf" target="_blank">Peak 301 Technical PDF</a> · <a href="assets/peak301-sds.pdf" target="_blank">Safety Data Sheet (SDS)</a></p>
-        </section>
-
-        <!-- Why Partner -->
-        <section id="why-partner" class="card" style="margin-bottom:12px">
-          <h2>Why partner with Peak Pros SC?</h2>
-          <ul class="benefits">
-            <li><strong>We handle chemical supply.</strong> White-label Peak 301 supplied on a predictable schedule.</li>
-            <li><strong>We train your team.</strong> On-site and remote training, plus sales scripts and safety guidance.</li>
-            <li><strong>You market under your brand.</strong> Full white-label permission — you sell to your customers as Peak Pros SC Certified.</li>
-            <li><strong>Contractor-first revenue share.</strong> Keep the majority of estimated job revenue after the $80/square share to Peak Pros SC.</li>
-            <li><strong>Territories protected.</strong> Territory availability messaging and limits to protect your local market.</li>
-          </ul>
-          <p style="font-weight:700;margin-top:8px">Clear differentiation from Roof Maxx: Peak 301 is a soy-based rejuvenation applied in larger-volume, white-label contract model with training and material supply included.</p>
-        </section>
-
-        <!-- Revenue Share Breakdown -->
-        <section id="revenue-model" class="card" style="margin-bottom:12px">
-          <h2>Revenue share breakdown</h2>
-
-          <p>Simple example model — Peak Pros SC: <strong>$80 per square</strong>. Contractor keeps the remainder. Below are realistic job examples so you can see actual contractor take-home revenue.</p>
-
-          <div style="overflow:auto">
-            <table style="width:100%;border-collapse:collapse;margin-top:8px">
-              <thead style="text-align:left">
-                <tr>
-                  <th style="padding:8px;border-bottom:1px solid #eee">Job size (squares)</th>
-                  <th style="padding:8px;border-bottom:1px solid #eee">Market price per sq (example)</th>
-                  <th style="padding:8px;border-bottom:1px solid #eee">Amount to Peak Pros SC</th>
-                  <th style="padding:8px;border-bottom:1px solid #eee">Estimated contractor revenue</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="padding:8px;border-top:1px solid #fafafa">25</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$200 / square</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$2,000 ($80 x 25)</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$3,000 (25 x $200 - $2,000)</td>
-                </tr>
-                <tr>
-                  <td style="padding:8px;border-top:1px solid #fafafa">35</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$200 / square</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$2,800 ($80 x 35)</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$4,200</td>
-                </tr>
-                <tr>
-                  <td style="padding:8px;border-top:1px solid #fafafa">50</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$180 / square</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$4,000 ($80 x 50)</td>
-                  <td style="padding:8px;border-top:1px solid #fafafa">$5,000</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p style="margin-top:8px"><strong>Notes:</strong> Market price per square varies by region, roof complexity, and warranty offered. Peak Pros SC recommends contractors price conservatively and quote rooftop complexity separately.</p>
-        </section>
-
-        <!-- Before/After gallery -->
-        <section id="gallery" class="card" style="margin-bottom:12px">
-          <h2>Before / After</h2>
-          <p>Manual slider: drag the handle to compare restored shingles.</p>
-          <div class="ba-slider" id="ba-slider" aria-label="Before and after roof rejuvenation">
-            <!-- Base (after) image -->
-            <img src="assets/gallery/after-01.jpg" alt="After: rejuvenated roof (placeholder)"/>
-            <!-- Overlay (before) -->
-            <div class="ba-overlay" id="ba-overlay" style="width:50%">
-              <img src="assets/gallery/before-01.jpg" alt="Before: weathered roof (placeholder)"/>
-            </div>
-            <div class="ba-handle" id="ba-handle" aria-hidden="true" title="Drag handle to compare"></div>
-          </div>
-          <p style="font-size:13px;margin-top:8px;color:#555">More photos: replace placeholders in `assets/gallery/` with your before/after images (25–50 square examples recommended).</p>
-        </section>
-
-        <!-- Testimonials -->
-        <section id="testimonials" class="card" style="margin-bottom:12px">
-          <h2>Partner testimonials</h2>
-          <div class="reviews" style="margin-top:8px">
-            <div class="reviews-inner" id="reviews-inner">
-              <div class="review">
-                <p>"Peak Pros SC gave our crew straightforward training and steady material delivery. We added $3k–$4k per job — and the customers love the results." — <strong>North GA Roofing Co.</strong></p>
-              </div>
-              <div class="review">
-                <p>"No inventory headaches and a simple revenue share. We brand the job as ours and keep most of the money." — <strong>Atlanta Power Wash Pros</strong></p>
-              </div>
-              <div class="review">
-                <p>"The sales scripts helped us close older homes that didn't need replacement yet. Happy customers, recurring touch points." — <strong>Savannah Contracting</strong></p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- How it works -->
-        <section id="how" class="card" style="margin-bottom:12px">
-          <h2>How it works — 4 steps</h2>
-          <ol style="padding-left:18px">
-            <li><strong>Apply.</strong> Submit the partner application below. We review territories and capacity.</li>
-            <li><strong>Get materials & training.</strong> Receive white-label Peak 301 supplies and a safety & application training session.</li>
-            <li><strong>Add rejuvenation to your services.</strong> Price the job, deploy your crew, and apply Peak 301 under your brand.</li>
-            <li><strong>Earn recurring revenue.</strong> Referrals and maintenance add long-term income — we handle product supply and business support.</li>
-          </ol>
-        </section>
-      </main>
-
-      <!-- RIGHT COLUMN: Partner Application -->
-      <aside>
-        <div class="card">
-          <h3 style="margin-top:0">Apply to become a partner</h3>
-          <p style="margin:0 0 10px">Quick application. We’ll review territory and capacity and follow up within 48 hours.</p>
-
-          <!-- Netlify form -->
-          <form name="partnerApplication" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="partnerForm">
-            <!-- Required for Netlify -->
-            <input type="hidden" name="form-name" value="partnerApplication" />
-            <input type="hidden" name="notify" value="gene@godawgsroofroof.com" />
-            <p style="display:none">
-              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-            </p>
-
-            <div class="row">
-              <label for="company">Company Name</label>
-              <input id="company" name="company" type="text" required />
-            </div>
-            <div class="row">
-              <label for="contact">Contact Name</label>
-              <input id="contact" name="contact" type="text" required />
-            </div>
-            <div class="row">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" required />
-            </div>
-            <div class="row">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required />
-            </div>
-            <div class="row">
-              <label for="service_area">Service Area (Cities / Counties)</label>
-              <input id="service_area" name="service_area" type="text" placeholder="e.g., Fulton, Cobb, Dekalb" required />
-            </div>
-            <div class="row">
-              <label for="jobs_per_month"># of Jobs per Month (estimate)</label>
-              <select id="jobs_per_month" name="jobs_per_month" required>
-                <option value="">Select</option>
-                <option value="1-5">1–5</option>
-                <option value="6-15">6–15</option>
-                <option value="16-30">16–30</option>
-                <option value="30+">30+</option>
-              </select>
-            </div>
-            <div class="row">
-              <label for="notes">Notes (equipment, crew size, any certifications)</label>
-              <textarea id="notes" name="notes" rows="3" placeholder="Tell us anything else we should know"></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn" type="submit">Submit Application</button>
-              <a class="btn secondary" href="tel:+16785550123">Call Now</a>
-            </div>
-
-            <small style="display:block;margin-top:8px;color:#666">We protect territories. If your area is already assigned we'll offer waitlist options.</small>
-          </form>
-
-          <p style="font-size:13px;margin-top:10px;color:#555">By submitting you agree to be contacted about Peak 301 partnership opportunities.</p>
-        </div>
-
-        <!-- Quick contact card -->
-        <div class="card" style="margin-top:12px">
-          <h4 style="margin:0 0 8px">Questions?</h4>
-          <p style="margin:0">Email: <a href="mailto:gene@godawgsroofroof.com">gene@godawgsroofroof.com</a></p>
-          <p style="margin:0">Phone: <a href="tel:+16785550123">(678) 555-0123</a></p>
-          <p style="margin-top:8px;font-size:13px;color:#666">Replace contact details with your official Peak Pros SC contact info before deploy.</p>
-        </div>
-      </aside>
+<!-- WHAT IS PEAK 301 -->
+<section class="container">
+  <h2>What Is Peak 301 Roof Rejuvenation?</h2>
+  <p>Peak 301 is a soy-based roof rejuvenation system designed to extend asphalt shingle roof life by restoring flexibility, stopping granular loss, and slowing oxidation.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Extend Roof Life</h3>
+      <p>Add 5–15 years to aging asphalt roofs without replacement.</p>
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-row">
-        <div style="display:flex;gap:10px;align-items:center">
-          <img src="assets/peak-pros-logo-white.png" alt="Peak Pros logo (white)" style="height:36px" />
-          <div>
-            <div style="font-weight:700">Peak Pros SC</div>
-            <div style="font-size:13px;color:#666">Serving South Carolina contractors</div>
-          </div>
-        </div>
-        <div style="text-align:right">
-          <div>Phone: <a href="tel:+16785550123">(678) 555-0123</a></div>
-          <div>Email: <a href="mailto:gene@godawgsroofroof.com">gene@godawgsroofroof.com</a></div>
-        </div>
-      </div>
-
-      <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px">
-        <div style="font-size:13px;color:#666">© <span id="year"></span> Peak Pros SC — Terms · Privacy</div>
-        <div style="font-size:13px;color:#666">Territory availability messages apply. Peak Pros SC retains product rights.</div>
-      </div>
-    </footer>
-
-  </div> <!-- wrap -->
-
-  <!-- Sticky Call Now button for mobile -->
-  <div class="call-sticky" id="callSticky">
-    <a href="tel:+16785550123" aria-label="Call Peak Pros SC">Call Now</a>
+    <div class="card">
+      <h3>Stop Granular Loss</h3>
+      <p>Rehydrates shingles to reduce cracking and granule shedding.</p>
+    </div>
+    <div class="card">
+      <h3>Restore Flexibility</h3>
+      <p>Improves shingle pliability and resistance to UV damage.</p>
+    </div>
   </div>
+</section>
 
-  <script>
-    // Year in footer
-    document.getElementById('year').textContent = (new Date()).getFullYear();
+<!-- WHY PARTNER -->
+<section class="container">
+  <h2>Why Partner With Peak Pros SC?</h2>
+  <div class="grid">
+    <div class="card"><p>We handle Peak 301 chemical supply</p></div>
+    <div class="card"><p>We provide training and onboarding</p></div>
+    <div class="card"><p>You spray under your brand</p></div>
+    <div class="card"><p>You keep the majority of the revenue</p></div>
+  </div>
+  <p style="margin-top:20px;"><strong>Not Roof Maxx.</strong> Peak 301 offers a contractor-first revenue share model with white-label control — not franchise restrictions.</p>
+</section>
 
-    // --- Before/After manual slider ---
-    (function() {
-      const slider = document.getElementById('ba-slider');
-      const overlay = document.getElementById('ba-overlay');
-      const handle = document.getElementById('ba-handle');
-      let dragging = false;
+<!-- REVENUE -->
+<section class="container">
+  <h2>Revenue Share Breakdown</h2>
+  <div class="revenue-box">
+    <p><strong>Example:</strong> $80 per square paid to Peak Pros SC</p>
+    <p>25 square job → $2,000 to Peak Pros SC / remainder to you</p>
+    <p>40 square job → $3,200 to Peak Pros SC / remainder to you</p>
+    <p>Typical partners add $5k–$20k/month in new revenue.</p>
+    <p><strong>South Carolina territories available now.</strong></p>
+  </div>
+</section>
 
-      function setPosition(percent){
-        overlay.style.width = percent + '%';
-        handle.style.left = percent + '%';
-      }
+<!-- BEFORE AFTER -->
+<section class="container">
+  <h2>Before & After Results</h2>
+  <div class="slider" id="beforeAfter">
+    <img src="/images/before-after-1.jpg" class="active">
+    <img src="/images/before-after-2.jpg">
+    <img src="/images/before-after-3.jpg">
+  </div>
+</section>
 
-      // Start position
-      setPosition(50);
+<!-- TESTIMONIALS -->
+<section class="container">
+  <h2>Partner Testimonials</h2>
+  <div class="slider" id="reviews">
+    <p class="active">“We added Peak 301 and closed jobs immediately. Easy upsell.”</p>
+    <p>“This filled the gap between repairs and replacements.”</p>
+    <p>“No franchise fees. No nonsense. Just revenue.”</p>
+  </div>
+</section>
 
-      function down(e){
-        dragging = true;
-        document.body.style.userSelect = 'none';
-      }
-      function up(){
-        dragging = false;
-        document.body.style.userSelect = '';
-      }
-      function move(e){
-        if(!dragging) return;
-        const rect = slider.getBoundingClientRect();
-        const clientX = (e.touches ? e.touches[0].clientX : e.clientX);
-        let percent = ((clientX - rect.left) / rect.width) * 100;
-        if(percent < 5) percent = 5;
-        if(percent > 95) percent = 95;
-        setPosition(percent);
-      }
+<!-- HOW IT WORKS -->
+<section class="container">
+  <h2>How It Works</h2>
+  <ol>
+    <li>Apply to become a partner</li>
+    <li>Get materials and training</li>
+    <li>Add rejuvenation to your services</li>
+    <li>Earn recurring revenue</li>
+  </ol>
+</section>
 
-      handle.addEventListener('mousedown', down);
-      handle.addEventListener('touchstart', down);
-      window.addEventListener('mouseup', up);
-      window.addEventListener('touchend', up);
-      window.addEventListener('mousemove', move);
-      window.addEventListener('touchmove', move);
-      // Click on slider to move handle
-      slider.addEventListener('click', function(e){
-        const rect = slider.getBoundingClientRect();
-        const percent = ((e.clientX - rect.left) / rect.width) * 100;
-        setPosition(Math.max(5, Math.min(95, percent)));
-      });
-    })();
+<!-- FORM -->
+<section class="container" id="apply">
+  <h2>Partner Application</h2>
 
-    // --- Auto-advancing reviews slider ---
-    (function(){
-      const inner = document.getElementById('reviews-inner');
-      let idx = 0;
-      const slides = inner.children.length;
-      function show(i){
-        inner.style.transform = 'translateX(' + (-i * 100) + '%)';
-      }
-      // auto advance every 4s
-      setInterval(function(){
-        idx = (idx + 1) % slides;
-        show(idx);
-      }, 4000);
-      // allow swipe on mobile (basic)
-      let startX = null;
-      inner.addEventListener('touchstart', (e)=> {
-        startX = e.touches[0].clientX;
-      });
-      inner.addEventListener('touchend', (e)=>{
-        if (!startX) return;
-        const endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-        if (Math.abs(diff) > 40) {
-          if (diff > 0) idx = Math.min(slides-1, idx+1);
-          else idx = Math.max(0, idx-1);
-          show(idx);
-        }
-        startX = null;
-      });
-    })();
+  <form name="partnerApplication" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="partnerApplication">
+    <p style="display:none">
+      <label>Don’t fill this out: <input name="bot-field"></label>
+    </p>
 
-    // --- Netlify form: optional JS success handling (progressive enhancement) ---
-    (function(){
-      const form = document.getElementById('partnerForm');
-      form.addEventListener('submit', function(e){
-        // Let Netlify handle the POST normally. This block can be used to show a quick client-side confirmation.
-        // No AJAX by default for Netlify; you can wire webhook/notifications in Netlify admin to send to gene@godawgsroofroof.com
-        setTimeout(()=> {
-          // simple UI feedback (non-blocking)
-          alert('Application submitted — thank you. We will review your territory and follow up at the email you provided.');
-        }, 10);
-      });
-    })();
-  </script>
+    <input type="text" name="company" placeholder="Company Name" required>
+    <input type="text" name="name" placeholder="Contact Name" required>
+    <input type="tel" name="phone" placeholder="Phone" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="service_area" placeholder="Service Area" required>
+    <input type="number" name="jobs_per_month" placeholder="# of Jobs per Month" required>
+
+    <button class="btn btn-primary" type="submit">Submit Application</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Peak Pros SC</p>
+  <p>gene@godawgsroofroof.com</p>
+  <p>© 2025 Peak Pros SC | Terms | Privacy</p>
+</footer>
+
+<a href="tel:14045551234" class="call-now">Call Now</a>
+
+<!-- JS -->
+<script>
+  let baIndex = 0;
+  const baImages = document.querySelectorAll('#beforeAfter img');
+  setInterval(() => {
+    baImages[baIndex].classList.remove('active');
+    baIndex = (baIndex + 1) % baImages.length;
+    baImages[baIndex].classList.add('active');
+  }, 3000);
+
+  let rIndex = 0;
+  const reviews = document.querySelectorAll('#reviews p');
+  setInterval(() => {
+    reviews[rIndex].classList.remove('active');
+    rIndex = (rIndex + 1) % reviews.length;
+    reviews[rIndex].classList.add('active');
+  }, 4000);
+</script>
+
 </body>
 </html>
