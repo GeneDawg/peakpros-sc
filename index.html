@@ -1,197 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>5-Star Results Across South Carolina | Peak Pros SC</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Peak 301 Partner Program South Carolina | Add Roof Rejuvenation Revenue</title>
+<meta name="description" content="Join Peak Pros SC and add Peak 301 roof rejuvenation to your roofing or home service business in South Carolina. White-label program, revenue share, no upfront cost." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body {
-  font-family: Inter, Arial, sans-serif;
-  background: #fff;
-  margin: 0;
-  color: #101114;
+:root {
+  --red:#C8102E;
+  --black:#101114;
+  --gray:#f2f2f2;
 }
+
+* { box-sizing:border-box; margin:0; padding:0; font-family:Inter,sans-serif; }
+
+body { color:#101114; line-height:1.6; }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px;
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+h1 { font-size:2.6rem; font-weight:800; }
+h2 { font-size:2rem; margin-bottom:20px; }
+h3 { font-size:1.3rem; margin-bottom:10px; }
+
+.btn {
+  display:inline-block;
+  padding:14px 26px;
+  border-radius:6px;
+  font-weight:700;
+  cursor:pointer;
 }
 
-.rating-badge {
-  background: #101114;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-bottom: 20px;
-  font-weight: 700;
+.btn-primary { background:var(--red); color:#fff; }
+.btn-outline { border:2px solid var(--red); color:var(--red); }
+
+.hero {
+  background:linear-gradient(rgba(16,17,20,.85),rgba(16,17,20,.85)),url('/images/hero-bg.jpg') center/cover;
+  color:#fff;
+  text-align:center;
+  padding:100px 20px;
 }
 
+.hero p { max-width:700px; margin:20px auto; color:#ddd; }
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card {
+  background:var(--gray);
+  padding:30px;
+  border-radius:10px;
+}
+
+/* REVIEWS SECTION */
 .review-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
 
 .map-box {
-  background: #eee;
-  border-radius: 12px;
-  padding: 20px;
+  background:#eee;
+  padding:20px;
+  border-radius:12px;
 }
 
-.map-box img {
-  width: 100%;
-}
+.map-box img { width:100%; }
 
 .reviews-box {
-  background: #f8f8f8;
-  border-radius: 12px;
-  padding: 30px;
+  background:#f9f9f9;
+  padding:30px;
+  border-radius:12px;
 }
 
 .review {
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
+  border-bottom:1px solid #ddd;
+  padding:15px 0;
 }
 
-.review strong {
-  display: block;
-}
-
-.stars {
-  color: gold;
-  font-weight: 700;
-}
+.stars { color:gold; font-weight:700; }
 
 .verified {
-  color: green;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.btn {
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-weight: 700;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary {
-  background: #C8102E;
-  color: #fff;
-}
-
-.btn-outline {
-  border: 2px solid #C8102E;
-  background: none;
-  color: #C8102E;
+  color:green;
+  font-size:.8rem;
+  font-weight:700;
 }
 
 .review-form {
-  margin-top: 20px;
-  display: none;
+  display:none;
+  margin-top:20px;
 }
 
 .review-form input,
 .review-form textarea,
 .review-form select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
 }
 
-.note {
-  font-size: 0.85rem;
-  color: #666;
+.rating-badge {
+  background:#101114;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:20px;
+  display:inline-block;
+  margin-bottom:20px;
+  font-weight:700;
+}
+
+footer {
+  background:#101114;
+  color:#bbb;
+  text-align:center;
+  padding:40px 20px;
 }
 
 @media(max-width:768px){
-  .review-layout {
-    grid-template-columns: 1fr;
-  }
+  h1 { font-size:2rem; }
+  .review-layout { grid-template-columns:1fr; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
+<section class="hero">
+  <h1>Add Roof Rejuvenation Revenue to Your Company — No Cost to You.</h1>
+  <p>Peak 301 Partner Program for South Carolina Contractors. White-label roof rejuvenation that installs under your brand.</p>
+  <a href="#apply" class="btn btn-primary">Become a Partner</a>
+  <a href="/docs/peak301-revenue-model.pdf" class="btn btn-outline">Get the Revenue Model</a>
+</section>
+
+<!-- WHAT IS PEAK 301 -->
+<section class="container">
+  <h2>What Is Peak 301 Roof Rejuvenation?</h2>
+  <div class="grid">
+    <div class="card"><h3>Extend Roof Life</h3><p>Add 5–15 years.</p></div>
+    <div class="card"><h3>Stop Granular Loss</h3><p>Reduce cracking and shedding.</p></div>
+    <div class="card"><h3>Restore Flexibility</h3><p>Improve shingle performance.</p></div>
+  </div>
+</section>
+
+<!-- WHY PARTNER -->
+<section class="container">
+  <h2>Why Partner With Peak Pros SC?</h2>
+  <div class="grid">
+    <div class="card">We supply Peak 301</div>
+    <div class="card">We train your team</div>
+    <div class="card">You sell under your brand</div>
+    <div class="card">You keep most of the revenue</div>
+  </div>
+</section>
+
+<!-- REVENUE -->
+<section class="container">
+  <h2>Revenue Share Breakdown</h2>
+  <div class="card">
+    <p>$80 per square to Peak Pros SC</p>
+    <p>25 sq job → $2,000 / remainder to you</p>
+    <p><strong>South Carolina territories available.</strong></p>
+  </div>
+</section>
+
+<!-- ⭐ REVIEWS + MAP SECTION (NEW, ADDED) -->
 <section class="container">
   <h2>5-Star Results Across South Carolina</h2>
   <div class="rating-badge">⭐ 4.9 / 5 Average Rating</div>
 
   <div class="review-layout">
 
-    <!-- MAP -->
     <div class="map-box">
-      <img src="/images/south-carolina.svg" alt="South Carolina Map">
-      <p style="text-align:center;font-size:.9rem;">Pinned job locations across SC</p>
+      <img src="/images/south-carolina.svg" alt="South Carolina job locations">
+      <p style="text-align:center;font-size:.9rem;">Completed jobs across SC</p>
     </div>
 
-    <!-- REVIEWS -->
     <div class="reviews-box">
 
-      <!-- APPROVED REVIEWS (MANUAL / CURATED) -->
       <div class="review">
         <strong>Joe A.</strong>
-        <span class="stars">★★★★★</span>
+        <div class="stars">★★★★★</div>
         <span class="verified">✔ Verified Job</span>
-        <p>Gene came on time, explained everything clearly, and the roof looked brand new.</p>
+        <p>Professional, clear communication, and great results.</p>
         <small>Charleston, SC</small>
       </div>
 
       <div class="review">
         <strong>Jessica M.</strong>
-        <span class="stars">★★★★★</span>
+        <div class="stars">★★★★★</div>
         <span class="verified">✔ Verified Job</span>
-        <p>Professional, fast, and honest. Peak 301 was the perfect solution.</p>
+        <p>Peak 301 was the perfect alternative to replacement.</p>
         <small>Greenville, SC</small>
       </div>
 
-      <!-- GOOGLE REVIEWS (EMBED – TRUSTED) -->
-      <h4 style="margin-top:30px;">Google Verified Reviews</h4>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.48"
-        width="100%" height="180" style="border:0;" loading="lazy">
-      </iframe>
+      <h4 style="margin-top:20px;">Google Verified Reviews</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18" width="100%" height="180" style="border:0;"></iframe>
 
-      <button class="btn btn-outline" onclick="toggleForm()">Give Us a Review</button>
+      <button class="btn btn-outline" onclick="toggleReviewForm()">Give Us a Review</button>
 
-      <!-- REVIEW FORM (MODERATED VIA NETLIFY FORMS) -->
       <form class="review-form" name="scReviews" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="scReviews">
-
         <input name="name" placeholder="Your Name" required>
         <textarea name="review" placeholder="Your Review" required></textarea>
-
         <select name="stars" required>
           <option value="">Star Rating</option>
           <option>5</option><option>4</option><option>3</option><option>2</option><option>1</option>
         </select>
-
         <input name="location" placeholder="City, SC" required>
-
         <button class="btn btn-primary">Submit for Approval</button>
-        <p class="note">
-          Reviews are verified and approved before being published.
-        </p>
+        <p style="font-size:.85rem;color:#666;">Reviews are verified before publishing.</p>
       </form>
 
     </div>
   </div>
 </section>
 
+<!-- APPLICATION -->
+<section class="container" id="apply">
+  <h2>Partner Application</h2>
+  <form name="partnerApplication" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="partnerApplication">
+    <input name="company" placeholder="Company Name" required>
+    <input name="name" placeholder="Contact Name" required>
+    <input name="phone" placeholder="Phone" required>
+    <input name="email" placeholder="Email" required>
+    <input name="service_area" placeholder="Service Area" required>
+    <input name="jobs" placeholder="# of Jobs per Month" required>
+    <button class="btn btn-primary">Submit Application</button>
+  </form>
+</section>
+
+<footer>
+  <p>Peak Pros SC</p>
+  <p>gene@godawgsroofroof.com</p>
+</footer>
+
 <script>
-function toggleForm(){
-  const f = document.querySelector('.review-form');
-  f.style.display = f.style.display === 'block' ? 'none' : 'block';
+function toggleReviewForm(){
+  const f=document.querySelector('.review-form');
+  f.style.display=f.style.display==='block'?'none':'block';
 }
 </script>
 
