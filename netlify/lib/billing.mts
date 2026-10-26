@@ -1,7 +1,7 @@
 // Peak 301 referral billing.
 //   buildEstimate(job, squares): from the EagleView square count, creates the estimate (Draft) addressed to the contractor,
 //     using the JobNimbus estimate template (terms of service + signature block), updates Eddie's labor on his task,
-//     and gives Shadie a task to send it for signature.
+//     and gives the office a task to send it for signature.
 //   createInvoiceFromEstimate(job, estimate): when the job reaches Job Completed, copies the estimate's lines into a
 //     Net 5 invoice (PORTAL_NET_DAYS) addressed to the contractor. Sending stays a one-click step in JobNimbus.
 import { accounts, env, HttpError, jn, jnAll, type Account } from "./portal.mts";
@@ -12,7 +12,11 @@ const PRODUCT_NAME = Netlify.env.get("PORTAL_PRODUCT_NAME") || "Peak 301 Referra
 const FALLBACK = { material: { cost: 14, price: 65 }, labor: { cost: 20, price: 20 } };
 export const LABOR_PER_SQ = Number(Netlify.env.get("PORTAL_LABOR_PER_SQ") || 20);
 export const NET_DAYS = Number(Netlify.env.get("PORTAL_NET_DAYS") || 7);
-export const USERS = { gene: "m9n0ajnc1wl1dlw1e01d8t6", eddie: "f51ac41fcfb54674950809f89d42766f" }; // Shadie works under Gene's login
+export const USERS = {
+  // Set in Netlify: the JobNimbus user ids who get the office and production tasks (leave unset to skip tasks).
+  gene: Netlify.env.get("PORTAL_OFFICE_USER_ID") || "",
+  eddie: Netlify.env.get("PORTAL_PRODUCTION_USER_ID") || "",
+};
 
 export async function jnWrite(method: "POST" | "PUT", path: string, body: unknown): Promise<any> {
   const key = Netlify.env.get("JOBNIMBUS_WRITE_KEY") || env("JOBNIMBUS_API_KEY");
@@ -49,6 +53,7 @@ export async function jobTasks(jobId: string): Promise<any[]> {
 
 /** Adds a task unless one with the same title already exists on the job. */
 export async function addTask(job: any, title: string, description: string, owner: string, dueDays = 1) {
+  if (!owner) return null; // no JobNimbus user set for this task type
   const existing = await jobTasks(job.jnid).catch(() => []);
   if (existing.some((t: any) => String(t.title || "") === title)) return null;
   const t = now();
@@ -110,12 +115,12 @@ export async function buildEstimate(jobId: string, squares: number) {
     template_id: estimateTemplate,
   });
 
-  // Eddie's task gets the confirmed labor.
+  // the production task gets the confirmed labor.
   const labor = round2(sq * LABOR_PER_SQ);
   let eddieUpdated = false;
   try {
     for (const t of await jobTasks(job.jnid)) {
-      if (!/eddie/i.test(String(t.title || ""))) continue;
+      if (!/production/i.test(String(t.title || ""))) continue;
       await jnWrite("PUT", `/tasks/${t.jnid}`, {
         description: `${t.description || ""}\n\nEagleView confirmed: ${sq} sq. Labor: ${sq} × $${LABOR_PER_SQ} = ${money(labor)}. Job price: ${money(amount)} (estimate #${estimate.number ?? "—"}). Wait for the contractor's signature before scheduling.`.trim(),
       });
@@ -124,10 +129,10 @@ export async function buildEstimate(jobId: string, squares: number) {
   } catch (e) {
     console.error("Eddie task update failed", e);
   }
-  // Shadie: send it for signature.
+  // Office: send it for signature.
   await addTask(
     job,
-    `Shadie: send estimate #${estimate.number ?? ""} for signature - ${job.name}`,
+    `Office: send estimate #${estimate.number ?? ""} for signature - ${job.name}`,
     `Open estimate #${estimate.number ?? ""} on this job and click Send for signature to ${acct?.name || "the contractor"}${acct ? "" : " (CONTRACTOR NOT MATCHED - check the job's contacts)"}.\n${sq} sq × $${mat.price + lab.price} = ${money(amount)}. Net ${NET_DAYS} once invoiced.\nWhen they sign, the job moves to Scheduled automatically.`,
     USERS.gene,
   ).catch((e) => console.error("Shadie task failed", e));

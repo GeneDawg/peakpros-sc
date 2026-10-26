@@ -45,7 +45,7 @@ export async function runPipeline(opts: { dry?: boolean } = {}) {
           if (!dry) {
             await setStatus(job, STATUS.scheduled);
             const sq = round2((est.items || []).reduce((a: number, i: any) => a + (/sq/i.test(i.uom || "") ? Number(i.quantity || 0) : 0), 0));
-            await addTask(job, `Eddie: contractor signed - schedule Peak 301 - ${job.name}`,
+            await addTask(job, `Production: contractor signed - schedule Peak 301 - ${job.name}`,
               `${acct?.name || "The contractor"} signed estimate #${est.number}. Schedule the install.\n${sq ? `${sq} sq. Labor: ${sq} × $20 = ${money(sq * 20)}.\n` : ""}When the work is done, move the job to ${STATUS.completed}; the invoice is created automatically.`,
               USERS.eddie, 2);
           }
@@ -65,13 +65,13 @@ export async function runPipeline(opts: { dry?: boolean } = {}) {
           if (!dry) {
             const inv = await createInvoiceFromEstimate(job, est);
             await setStatus(job, STATUS.invoiced);
-            await addTask(job, `Shadie: send invoice #${inv.number ?? ""} - ${job.name}`,
+            await addTask(job, `Office: send invoice #${inv.number ?? ""} - ${job.name}`,
               `Invoice #${inv.number ?? ""} for ${money(Number(inv.total ?? est.total ?? 0))} was created from estimate #${est.number}. Open it and click Send to ${acct?.name || "the contractor"} (Net ${NET_DAYS}, pay link included).`,
               USERS.gene);
           }
         } else {
           log(job, `no estimate yet - Shadie task to enter the EagleView squares`);
-          if (!dry) await addTask(job, `Shadie: job completed but no estimate - ${job.name}`,
+          if (!dry) await addTask(job, `Office: job completed but no estimate - ${job.name}`,
             `This job is marked ${STATUS.completed} but has no estimate. Create the estimate on this job from the \"Peak 301 Only\" layout with the EagleView squares and get it signed; the invoice is created on the next check.`, USERS.gene);
         }
         continue;

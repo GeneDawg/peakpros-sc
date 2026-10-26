@@ -8,8 +8,9 @@ import { accounts, env, HttpError, type Account } from "./portal.mts";
 
 const JN_BASE = "https://app.jobnimbus.com/api1";
 const USERS = {
-  gene: "m9n0ajnc1wl1dlw1e01d8t6", // Shadie works under Gene's login
-  eddie: "f51ac41fcfb54674950809f89d42766f",
+  // Set in Netlify: the JobNimbus user ids who get the office and production tasks (leave unset to skip tasks).
+  gene: Netlify.env.get("PORTAL_OFFICE_USER_ID") || "",
+  eddie: Netlify.env.get("PORTAL_PRODUCTION_USER_ID") || "",
 };
 const LABOR_PER_SQ = Number(Netlify.env.get("PORTAL_LABOR_PER_SQ") || 20);
 
@@ -116,7 +117,7 @@ export async function createFromAssignment(a: Assignment, opts: { test?: boolean
     ...addr,
     description: "Peak 301 referral homeowner",
     source_name: acct?.sources?.[0],
-    sales_rep: USERS.gene,
+    ...(USERS.gene ? { sales_rep: USERS.gene } : {}),
   });
 
   // 2. Job under the contractor
@@ -135,14 +136,14 @@ export async function createFromAssignment(a: Assignment, opts: { test?: boolean
     ...addr,
     description: text,
     source_name: acct?.sources?.[0],
-    sales_rep: USERS.gene,
+    ...(USERS.gene ? { sales_rep: USERS.gene } : {}),
     ...fields,
   });
 
   // 3. Shadie: order EagleView
   const t = now();
-  const shadie = await jnWrite("POST", "/tasks", {
-    title: `${tag}Shadie: EagleView + estimate - ${addr.address_line1 || clean(a.property_address)}`,
+  const shadie = USERS.gene && await jnWrite("POST", "/tasks", {
+    title: `${tag}Office: EagleView + estimate - ${addr.address_line1 || clean(a.property_address)}`,
     record_type_name: "Task",
     description: `1. Order the EagleView QuickSquares report for ${clean(a.property_address)} (contractor says ${sq ? sq + " sq" : "size not given"}).\n2. When it arrives, create the estimate on this job from the "Peak 301 Only" layout using the EagleView squares.\n3. Send it for signature to ${acct ? acct.name : "the contractor"}. The board moves to Estimate Sent, then Scheduled when they sign; Eddie gets the schedule task with labor at $${LABOR_PER_SQ}/sq.`,
     related: [{ id: job.jnid }],
@@ -153,8 +154,8 @@ export async function createFromAssignment(a: Assignment, opts: { test?: boolean
 
   // 4. Eddie: production with price and labor
   const labor = sq ? sq * LABOR_PER_SQ : null;
-  const eddie = await jnWrite("POST", "/tasks", {
-    title: `${tag}Eddie: schedule Peak 301 - ${addr.address_line1 || clean(a.property_address)}`,
+  const eddie = USERS.eddie && await jnWrite("POST", "/tasks", {
+    title: `${tag}Production: schedule Peak 301 - ${addr.address_line1 || clean(a.property_address)}`,
     record_type_name: "Task",
     description: [
       `Peak 301 job for ${acct ? acct.name : clean(a.company)}.`,
@@ -169,5 +170,5 @@ export async function createFromAssignment(a: Assignment, opts: { test?: boolean
     date_end: t + 2 * day,
   });
 
-  return { contractor: acct?.key || null, homeowner: homeowner.jnid, job: job.jnid, tasks: [shadie.jnid, eddie.jnid] };
+  return { contractor: acct?.key || null, homeowner: homeowner.jnid, job: job.jnid, tasks: [shadie?.jnid, eddie?.jnid].filter(Boolean) };
 }

@@ -8,7 +8,10 @@ Set these in Netlify (Site configuration > Environment variables). They are secr
 - PORTAL_SESSION_SECRET: a long random string
 - PORTAL_ADMIN_CODE: the admin access code for this site
 - PORTAL_ACCOUNTS: the partner list, as a JSON list of {key,name,prefix,contact,code}
-- JOBNIMBUS_API_KEY and JOBNIMBUS_WRITE_KEY: only if jobs for this state should be created in a JobNimbus account
+- JOBNIMBUS_API_KEY and JOBNIMBUS_WRITE_KEY: from the Peak 301 Pros JobNimbus account (NOT Go Dawgs Roof Roof's)
+- PORTAL_OFFICE_USER_ID and PORTAL_PRODUCTION_USER_ID (optional): JobNimbus user ids that receive the office and production tasks; tasks are skipped if unset
+- PORTAL_PIPELINE_ON=1 (optional): turns on the automatic job-status mover. It is off until set
+- PORTAL_APPLICATOR_NAME (optional): name printed on warranty letters (default: Peak 301 Pros South Carolina)
 
 Until these are set, the public marketing page works but partner sign-in will not.
 
