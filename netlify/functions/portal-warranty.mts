@@ -1,6 +1,7 @@
 import type { Config } from "@netlify/functions";
 import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
-import { allowedAccounts, handleError, HttpError, json, loadJobs, makeFileTicket, readFileTicket, readSession } from "../lib/portal.mts";
+import { allowedAccounts, handleError, HttpError, json, makeFileTicket, readFileTicket, readSession } from "../lib/portal.mts";
+import { allJobs, toPortalJob, visibleJobs } from "../lib/jobs.mts";
 import { WARRANTY_TEMPLATE_B64 } from "../lib/warranty-template.mts";
 
 // GET ?job=<jnid> -> the completed Peak 301 warranty PDF. Released only when the job's invoice is paid in full.
@@ -14,7 +15,7 @@ export default async (req: Request) => {
     const ticket = url.searchParams.get("t");
     const session = ticket ? readFileTicket(ticket, jnid) : readSession(req);
     if (!session) throw new HttpError(401, "This warranty link has expired. Go back to your dashboard and tap Download warranty again.");
-    const { jobs } = await loadJobs(allowedAccounts(session, "all"));
+    const jobs = visibleJobs(await allJobs(), session, allowedAccounts(session, "all")).map(toPortalJob);
     const job = jobs.find((j) => j.jnid === jnid);
     if (!job) throw new HttpError(404, "That job isn't on your account.");
     if (!job.invoice?.isPaid) throw new HttpError(403, "The warranty is released once the invoice is paid in full.");
