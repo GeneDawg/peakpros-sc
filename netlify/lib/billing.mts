@@ -7,7 +7,7 @@
 import { accounts, env, HttpError, jn, jnAll, type Account } from "./portal.mts";
 
 const JN_BASE = "https://app.jobnimbus.com/api1";
-// Price list item "Peak 301 Referral Partner Install": $85/SQ = $65 material line (cost $14) + $20 labor (cost $20).
+// Price list item "Peak 301 Referral Partner Install" (material line + labor line); rates live in the JobNimbus price list.
 const PRODUCT_NAME = Netlify.env.get("PORTAL_PRODUCT_NAME") || "Peak 301 Referral Partner Install";
 const FALLBACK = { material: { cost: 14, price: 65 }, labor: { cost: 20, price: 20 } };
 export const LABOR_PER_SQ = Number(Netlify.env.get("PORTAL_LABOR_PER_SQ") || 20);

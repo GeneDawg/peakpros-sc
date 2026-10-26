@@ -30,7 +30,7 @@ export default async (req: Request) => {
       : "";
     // Value column of the template's four-row table (row middles measured from the top of the page).
     const rows: [number, string][] = [
-      [162, "Go Dawgs Roof Roof"],
+      [162, Netlify.env.get("PORTAL_APPLICATOR_NAME") || "Peak 301 Pros South Carolina"],
       [210, job.owner],
       [258, job.address],
       [306, start],
